@@ -37,7 +37,9 @@ function createComponent(uri: { path: string }, componentName: string) {
 
     const arr = uri.path.split('/');
 
-    arr.pop();
+    if (fs.lstatSync(uri.path).isFile()) {
+        arr.pop();
+    }
 
     const filePath = arr.join('/');
 
@@ -52,7 +54,7 @@ module.exports = function (context: { subscriptions: any[]; }) {
             placeHolder: 'MyComponent',
             prompt: 'What is the name of the new component?',
         });
-
+        
         createComponent(uri, convertComponentName(componentName!));
     }));
 

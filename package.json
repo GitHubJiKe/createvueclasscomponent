@@ -2,13 +2,18 @@
 	"name": "createvueclasscomponent",
 	"displayName": "CreateVueClassComponent",
 	"description": "create vue class component",
-	"version": "0.0.1",
+	"icon": "images/vue_logo.png",
+	"version": "0.0.2",
+	"publisher": "pengfeiyuan",
 	"engines": {
 		"vscode": "^1.57.0"
 	},
 	"categories": [
 		"Other"
 	],
+	"repository": {
+		"url": "https://github.com/GitHubJiKe/createvueclasscomponent"
+	},
 	"activationEvents": [
 		"*"
 	],
@@ -23,9 +28,7 @@
 		"keybindings": [
 			{
 				"command": "createvueclasscomponent.create",
-				"key": "ctrl+f9",
-				"mac": "cmd+n",
-				"when": "editorTextFocus"
+				"when": "explorerResourceIsFolder || resourceScheme == file"
 			}
 		],
 		"menus": {
@@ -50,7 +53,7 @@
 		"pretest": "npm run compile && npm run lint",
 		"lint": "eslint src --ext ts",
 		"test": "node ./out/test/runTest.js",
-		"esbuild-base": "esbuild ./src/extension.ts --bundle --outfile=out/main.js --external:vscode --format=cjs --platform=node",
+		"esbuild-base": "esbuild ./src/extension.ts --bundle --outfile=out/extension.js --external:vscode --format=cjs --platform=node",
 		"esbuild": "npm run -S esbuild-base -- --sourcemap",
 		"esbuild-watch": "npm run -S esbuild-base -- --sourcemap --watch"
 	},
