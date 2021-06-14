@@ -4,3 +4,23 @@
 > The reason I make it is to save my time in work, because my new team is still using Vue2 and write class style component, so I have to adapt to it.(I am a react user and favor into hooks and functional style.)
 > I hope this little tool will help you too.
 
+
+### code example
+
+```html
+<template>
+</template>
+    
+<script lang="ts">
+    
+import { Vue, Component, Prop } from "vue-property-decorator";
+    
+@Component
+export default class A extends Vue {}
+    
+</script>
+    
+<style lang="less" scoped>
+    
+</style>
+```
