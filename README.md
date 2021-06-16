@@ -36,3 +36,14 @@ export default class A extends Vue {}
     
 </style>
 ```
+
+### package and publish
+
+[Doc](https://code.visualstudio.com/api/working-with-extensions/publishing-extension)
+
+```bash
+    // build
+    vsce package
+    // publish
+    vsce publish
+```
