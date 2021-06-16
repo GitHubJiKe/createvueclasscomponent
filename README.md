@@ -4,6 +4,18 @@
 > The reason I make it is to save my time in work, because my new team is still using Vue2 and write class style component, so I have to adapt to it.(I am a react user and favor into hooks and functional style.)
 > I hope this little tool will help you too.
 
+### support input name style
+
+- DemoComponent -> DemoComponent `recommand`
+- demo component -> DemoComponent `recommand`
+- demo-component -> DemoComponent `recommand`
+- demoComponent -> DemoComponent
+- Demo-component -> DemoComponent
+- Demo Component -> DemoComponent
+- Demo component -> DemoComponent
+- Democomponent -> Democomponent `not recommand`
+- democomponent -> Democomponent `not recommand`
+
 
 ### code example
 
@@ -23,4 +35,15 @@ export default class A extends Vue {}
 <style lang="less" scoped>
     
 </style>
+```
+
+### package and publish
+
+[Doc](https://code.visualstudio.com/api/working-with-extensions/publishing-extension)
+
+```bash
+    // build
+    vsce package
+    // publish
+    vsce publish
 ```
