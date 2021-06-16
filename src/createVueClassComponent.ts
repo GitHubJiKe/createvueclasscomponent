@@ -1,17 +1,7 @@
 import *  as vscode from 'vscode';
 import * as fs from 'fs';
 import * as path from 'path';
-
-
-function convertComponentName(componentName: string) {
-    return componentName.split('').reduce((acc: string, cur: string, idx: number) => {
-        if (idx === 0) {
-            return acc + cur.toUpperCase();
-        }
-
-        return acc + cur;
-    }, '');
-}
+import convertWords2BigCamelCaseStyle from './convertWords2BigCamelCaseStyle'
 
 
 function getTemplate(componentName: string) {
@@ -39,7 +29,7 @@ async function createComponent(uri: vscode.Uri, componentName: string) {
     }
 
     const filePath = arr.join('/');
-   
+
     if (fs.existsSync(`${filePath}/${componentName}.vue`)) {
         vscode.window.showWarningMessage(`You already have one ${componentName} component.`);
         return;
@@ -57,6 +47,6 @@ module.exports = function (context: { subscriptions: any[]; }) {
             prompt: 'What is the name of the new component?',
         });
 
-        createComponent(uri, convertComponentName(componentName!));
+        createComponent(uri, convertWords2BigCamelCaseStyle(componentName!));
     }));
 };
