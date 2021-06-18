@@ -4,7 +4,7 @@
 > The reason I make it is to save my time in work, because my new team is still using Vue2 and write class style component, so I have to adapt to it.(I am a react user and favor into hooks and functional style.)
 > I hope this little tool will help you too.
 
-### support input name style
+### Support input name style
 
 -   DemoComponent -> DemoComponent `recommend`
 -   demo component -> DemoComponent `recommend`
@@ -16,7 +16,7 @@
 -   Democomponent -> Democomponent `not recommend`
 -   democomponent -> Democomponent `not recommend`
 
-### code example
+### Code example
 
 ```html
 <template> </template>
@@ -31,7 +31,7 @@
 <style lang="less" scoped></style>
 ```
 
-### check vue filename
+### Check vue filename
 
 > Help you rename you irregularly vue filename, and it's an options choice,
 > you can just choose No to check the files details in terminal panel.
@@ -45,7 +45,7 @@
 > In my opinion, as a component your component name should be same as your .vue filename, in this way you can easily know your component's name and meaning.
 > Big CampleCase is my favorite style for name a file, and many popular and great Open-Sourced UI library such as [ElementUI](https://element.eleme.io/#/en-US),[Ant Design](https://ant.design/), they do this too. So why don't we follow them?
 
-### package and publish
+### Package and Publish
 
 [Doc](https://code.visualstudio.com/api/working-with-extensions/publishing-extension)
 
