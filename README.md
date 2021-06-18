@@ -36,6 +36,15 @@
 > Help you rename you irregularly vue filename, and it's an options choice,
 > you can just choose No to check the files details in terminal panel.
 
+#### Why should you use this tool?
+
+> Check the [Style Guide](https://vuejs.org/v2/style-guide/) of Vue, you should try your best to follow these rules.
+
+#### How to name filename
+
+> In my opinion, as a component your component name should be same as your .vue filename, in this way you can easily know your component's name and meaning.
+> Big CampleCase is my favorite style for name a file, and many popular and great Open-Sourced UI library such as [ElementUI](https://element.eleme.io/#/en-US),[Ant Design](https://ant.design/), they do this too. So why don't we follow them?
+
 ### package and publish
 
 [Doc](https://code.visualstudio.com/api/working-with-extensions/publishing-extension)

@@ -3,7 +3,7 @@
 	"displayName": "CreateVueClassComponent",
 	"description": "create vue class component",
 	"icon": "images/vue_logo.png",
-	"version": "0.0.4",
+	"version": "0.1.0",
 	"publisher": "pengfeiyuan",
 	"engines": {
 		"vscode": "^1.57.0"
