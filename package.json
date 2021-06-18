@@ -23,11 +23,19 @@
 			{
 				"command": "createvueclasscomponent.create",
 				"title": "Create Vue Class Component"
+			},
+			{
+				"command": "createvueclasscomponent.check",
+				"title": "Check Vue Filename"
 			}
 		],
 		"keybindings": [
 			{
 				"command": "createvueclasscomponent.create",
+				"when": "explorerResourceIsFolder || resourceScheme == file"
+			},
+			{
+				"command": "createvueclasscomponent.check",
 				"when": "explorerResourceIsFolder || resourceScheme == file"
 			}
 		],
@@ -36,11 +44,19 @@
 				{
 					"command": "createvueclasscomponent.create",
 					"group": "navigation"
+				},
+				{
+					"command": "createvueclasscomponent.check",
+					"group": "navigation"
 				}
 			],
 			"explorer/context": [
 				{
 					"command": "createvueclasscomponent.create",
+					"group": "navigation"
+				},
+				{
+					"command": "createvueclasscomponent.check",
 					"group": "navigation"
 				}
 			]

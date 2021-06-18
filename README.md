@@ -6,36 +6,35 @@
 
 ### support input name style
 
-- DemoComponent -> DemoComponent `recommand`
-- demo component -> DemoComponent `recommand`
-- demo-component -> DemoComponent `recommand`
-- demoComponent -> DemoComponent
-- Demo-component -> DemoComponent
-- Demo Component -> DemoComponent
-- Demo component -> DemoComponent
-- Democomponent -> Democomponent `not recommand`
-- democomponent -> Democomponent `not recommand`
-
+-   DemoComponent -> DemoComponent `recommend`
+-   demo component -> DemoComponent `recommend`
+-   demo-component -> DemoComponent `recommend`
+-   demoComponent -> DemoComponent
+-   Demo-component -> DemoComponent
+-   Demo Component -> DemoComponent
+-   Demo component -> DemoComponent
+-   Democomponent -> Democomponent `not recommend`
+-   democomponent -> Democomponent `not recommend`
 
 ### code example
 
 ```html
-<template>
-</template>
-    
+<template> </template>
+
 <script lang="ts">
-    
-import { Vue, Component, Prop } from "vue-property-decorator";
-    
-@Component
-export default class A extends Vue {}
-    
+	import { Vue, Component, Prop } from "vue-property-decorator";
+
+	@Component
+	export default class ComponentName extends Vue {}
 </script>
-    
-<style lang="less" scoped>
-    
-</style>
+
+<style lang="less" scoped></style>
 ```
+
+### check vue filename
+
+> Help you rename you irregularly vue filename, and it's an options choice,
+> you can just choose No to check the files details in terminal panel.
 
 ### package and publish
 
