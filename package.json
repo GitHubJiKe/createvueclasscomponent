@@ -1,90 +1,112 @@
 {
-	"name": "createvueclasscomponent",
-	"displayName": "CreateVueClassComponent",
-	"description": "create vue class component",
-	"icon": "images/vue_logo.png",
-	"version": "0.1.2",
-	"publisher": "pengfeiyuan",
-	"engines": {
-		"vscode": "^1.57.0"
-	},
-	"categories": [
-		"Other"
-	],
-	"repository": {
-		"url": "https://github.com/GitHubJiKe/createvueclasscomponent"
-	},
-	"activationEvents": [
-		"*"
-	],
-	"main": "./out/extension.js",
-	"contributes": {
-		"commands": [
-			{
-				"command": "createvueclasscomponent.create",
-				"title": "Create Vue Class Component"
-			},
-			{
-				"command": "createvueclasscomponent.check",
-				"title": "Check Vue Filename"
-			}
-		],
-		"keybindings": [
-			{
-				"command": "createvueclasscomponent.create",
-				"when": "explorerResourceIsFolder || resourceScheme == file"
-			},
-			{
-				"command": "createvueclasscomponent.check",
-				"when": "explorerResourceIsFolder || resourceScheme == file"
-			}
-		],
-		"menus": {
-			"editor/context": [
-				{
-					"command": "createvueclasscomponent.create",
-					"group": "navigation"
-				},
-				{
-					"command": "createvueclasscomponent.check",
-					"group": "navigation"
-				}
-			],
-			"explorer/context": [
-				{
-					"command": "createvueclasscomponent.create",
-					"group": "navigation"
-				},
-				{
-					"command": "createvueclasscomponent.check",
-					"group": "navigation"
-				}
-			]
-		}
-	},
-	"scripts": {
-		"vscode:prepublish": "npm run compile",
-		"compile": "tsc -p ./",
-		"watch": "tsc -watch -p ./",
-		"pretest": "npm run compile && npm run lint",
-		"lint": "eslint src --ext ts",
-		"test": "node ./out/test/runTest.js",
-		"esbuild-base": "esbuild ./src/extension.ts --bundle --outfile=out/extension.js --external:vscode --format=cjs --platform=node",
-		"esbuild": "npm run -S esbuild-base -- --sourcemap",
-		"esbuild-watch": "npm run -S esbuild-base -- --sourcemap --watch"
-	},
-	"devDependencies": {
-		"@types/glob": "^7.1.3",
-		"@types/mocha": "^8.2.2",
-		"@types/node": "14.x",
-		"@types/vscode": "^1.57.0",
-		"@typescript-eslint/eslint-plugin": "^4.26.0",
-		"@typescript-eslint/parser": "^4.26.0",
-		"esbuild": "^0.12.8",
-		"eslint": "^7.27.0",
-		"glob": "^7.1.7",
-		"mocha": "^8.4.0",
-		"typescript": "^4.3.2",
-		"vscode-test": "^1.5.2"
-	}
+  "name": "createvueclasscomponent",
+  "displayName": "CreateVueClassComponent",
+  "description": "create vue class component",
+  "icon": "images/vue_logo.png",
+  "version": "0.1.3",
+  "publisher": "pengfeiyuan",
+  "engines": {
+    "vscode": "^1.57.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "repository": {
+    "url": "https://github.com/GitHubJiKe/createvueclasscomponent"
+  },
+  "activationEvents": [
+    "*"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "createvueclasscomponent.create",
+        "title": "Create Vue Class Component"
+      },
+      {
+        "command": "createvueclasscomponent.check",
+        "title": "Check Vue Filename"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "createvueclasscomponent.create",
+        "when": "explorerResourceIsFolder || resourceScheme == file"
+      },
+      {
+        "command": "createvueclasscomponent.check",
+        "when": "explorerResourceIsFolder || resourceScheme == file"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "createvueclasscomponent.create",
+          "group": "navigation"
+        },
+        {
+          "command": "createvueclasscomponent.check",
+          "group": "navigation"
+        }
+      ],
+      "explorer/context": [
+        {
+          "command": "createvueclasscomponent.create",
+          "group": "navigation"
+        },
+        {
+          "command": "createvueclasscomponent.check",
+          "group": "navigation"
+        }
+      ]
+    },
+    "configuration": [
+      {
+        "title": "CreateVueClassComponent",
+        "properties": {
+          "check.ignoreFilename": {
+            "type": "string",
+            "default": "index",
+            "description": "ignore filename to check and rename"
+          }
+        }
+      },
+      {
+        "title": "CreateVueClassComponent",
+        "properties": {
+          "create.templatePath": {
+            "type": "string",
+            "default": null,
+            "description": "custom your snippets code template file"
+          }
+        }
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js",
+    "esbuild-base": "esbuild ./src/extension.ts --bundle --outfile=out/extension.js --external:vscode --format=cjs --platform=node",
+    "esbuild": "npm run -S esbuild-base -- --sourcemap",
+    "esbuild-watch": "npm run -S esbuild-base -- --sourcemap --watch"
+  },
+  "devDependencies": {
+    "@types/glob": "^7.1.3",
+    "@types/mocha": "^8.2.2",
+    "@types/node": "14.x",
+    "@types/vscode": "^1.57.0",
+    "@typescript-eslint/eslint-plugin": "^4.26.0",
+    "@typescript-eslint/parser": "^4.26.0",
+    "esbuild": "^0.12.8",
+    "eslint": "^7.27.0",
+    "glob": "^7.1.7",
+    "mocha": "^8.4.0",
+    "typescript": "^4.3.2",
+    "vscode-test": "^1.5.2"
+  }
 }

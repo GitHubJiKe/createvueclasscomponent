@@ -4,6 +4,13 @@ import * as path from "path";
 import convertWords2BigCamelCaseStyle from "./convertWords2BigCamelCaseStyle";
 
 function getTemplate(componentName: string) {
+  const tPath = vscode.workspace.getConfiguration("create").get("templatePath");
+
+  if (tPath) {
+    const content = fs.readFileSync(path.resolve(__dirname, tPath as string));
+    return content.toString().replace("ComponentName", componentName);
+  }
+
   return `<template>\n</template>
     \n<script lang="ts">
     \nimport { Vue, Component, Prop } from "vue-property-decorator";
