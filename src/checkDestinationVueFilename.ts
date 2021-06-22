@@ -1,6 +1,7 @@
 import * as vscode from "vscode";
 import * as fs from "fs";
 import convertWords2BigCamelCaseStyle from "./convertWords2BigCamelCaseStyle";
+import { getIgnoreFilenames } from "./utils";
 
 interface Data {
   oldPath: string;
@@ -8,15 +9,9 @@ interface Data {
   newPath: string;
 }
 
-function getIgnoreFilenames() {
-  return (
-    vscode.workspace.getConfiguration("check").get("ignoreFilename") as string[]
-  ).map((v) => v + ".vue");
-}
-
 function readFilesOfDest(uri: vscode.Uri) {
-  const _path = uri.path;
   const ignoreFilenames = getIgnoreFilenames();
+  const _path = uri.path;
   if (fs.lstatSync(_path).isFile()) {
     const arr = _path.split("/");
     const filename = arr.pop();

@@ -1,3 +1,5 @@
+import { getIgnoreFilenames } from "./utils";
+
 /**
  * 是否存在大写字符
  * @param {*} str
@@ -54,6 +56,11 @@ function convert(str: string, divider = " ") {
 }
 
 function convertWords2BigCamelCaseStyle(origionalName: string) {
+  const ignoreNames = getIgnoreFilenames(false);
+  if (ignoreNames.includes(origionalName)) {
+    return origionalName;
+  }
+
   const hasSpace = hasDividerSpace(origionalName);
   const hasHyphon = hasDividerHyphen(origionalName);
 
