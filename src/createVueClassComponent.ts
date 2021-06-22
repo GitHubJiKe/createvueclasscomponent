@@ -7,8 +7,15 @@ function getTemplate(componentName: string) {
   const tPath = vscode.workspace.getConfiguration("create").get("templatePath");
 
   if (tPath) {
-    const content = fs.readFileSync(path.resolve(__dirname, tPath as string));
-    return content.toString().replace("ComponentName", componentName);
+    const filePath = path.resolve(__dirname, tPath as string);
+    if (fs.existsSync(filePath)) {
+      const content = fs.readFileSync(filePath);
+      return content.toString().replace("ComponentName", componentName);
+    }
+    vscode.window.showErrorMessage(
+      "Can't find your template file, please check your path!"
+    );
+    return;
   }
 
   return `<template>\n</template>
@@ -46,8 +53,11 @@ async function createComponent(uri: vscode.Uri, componentName: string) {
     );
     return;
   }
-
-  writeFile(getTemplate(componentName), filePath, componentName);
+  const content = getTemplate(componentName);
+  
+  if (content) {
+    writeFile(content, filePath, componentName);
+  }
 }
 
 function createVueClassComponent(context: vscode.ExtensionContext) {

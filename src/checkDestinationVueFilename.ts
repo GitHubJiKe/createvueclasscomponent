@@ -8,19 +8,19 @@ interface Data {
   newPath: string;
 }
 
-function getIgnoreFilename() {
+function getIgnoreFilenames() {
   return (
-    vscode.workspace.getConfiguration("check").get("ignoreFilename") + ".vue"
-  );
+    vscode.workspace.getConfiguration("check").get("ignoreFilename") as string[]
+  ).map((v) => v + ".vue");
 }
 
 function readFilesOfDest(uri: vscode.Uri) {
   const _path = uri.path;
-  const ignoreFilename = getIgnoreFilename();
+  const ignoreFilenames = getIgnoreFilenames();
   if (fs.lstatSync(_path).isFile()) {
     const arr = _path.split("/");
     const filename = arr.pop();
-    if (_path.endsWith(".vue") && filename !== ignoreFilename) {
+    if (_path.endsWith(".vue") && !ignoreFilenames.includes(filename!)) {
       const dir = arr.join("/");
 
       return [handleFile(filename!, dir)];
@@ -32,7 +32,11 @@ function readFilesOfDest(uri: vscode.Uri) {
   const res: Data[] = [];
 
   function handleFile(v: string, dir: string): Data {
-    if (/\.vue$/.test(v) && v !== ignoreFilename && !/[A-Z]/g.test(v[0])) {
+    if (
+      /\.vue$/.test(v) &&
+      !ignoreFilenames.includes(v) &&
+      !/[A-Z]/g.test(v[0])
+    ) {
       return {
         oldPath: `${dir}/${v}`,
         tempPath: `${dir}/${convertWords2BigCamelCaseStyle(v)}.temp`,
