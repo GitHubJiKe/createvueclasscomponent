@@ -3,12 +3,13 @@
   "displayName": "CreateVueClassComponent",
   "description": "create vue class component",
   "icon": "images/vue_logo.png",
-  "version": "0.1.5",
+  "version": "0.2.0",
   "publisher": "pengfeiyuan",
   "engines": {
     "vscode": "^1.57.0"
   },
   "categories": [
+    "Snippets",
     "Other"
   ],
   "repository": {
@@ -83,6 +84,16 @@
             "description": "custom your snippets code template file"
           }
         }
+      }
+    ],
+    "snippets": [
+      {
+        "language": "typescript",
+        "path": "./snippets/vue-class-component-lifecircle.json"
+      },
+      {
+        "language": "javascript",
+        "path": "./snippets/vue-class-component-lifecircle.json"
       }
     ]
   },

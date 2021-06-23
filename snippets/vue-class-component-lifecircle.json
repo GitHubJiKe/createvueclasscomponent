@@ -1,0 +1,32 @@
+{
+  "Vue Lifecycle beforeMount": {
+    "prefix": "pbm",
+    "body": ["private beforeMount () {", "\t${0}", "}"],
+    "description": "beforeMount lifecycle method"
+  },
+  "Vue Lifecycle mounted": {
+    "prefix": "pm",
+    "body": ["private mounted () {", "\t${0}", "}"],
+    "description": "mounted lifecycle method"
+  },
+  "Vue Lifecycle beforeUpdate": {
+    "prefix": "pbu",
+    "body": ["private beforeUpdate () {", "\t${0}", "}"],
+    "description": "beforeUpdate lifecycle method"
+  },
+  "Vue Lifecycle updated": {
+    "prefix": "pu",
+    "body": ["private updated () {", "\t${0}", "}"],
+    "description": "updated lifecycle method"
+  },
+  "Vue Lifecycle beforeDestroy": {
+    "prefix": "pbd",
+    "body": ["private beforeDestroy () {", "\t${0}", "}"],
+    "description": "beforeDestroy lifecycle method"
+  },
+  "Vue Lifecycle destroyd": {
+    "prefix": "pd",
+    "body": ["private destroyd () {", "\t${0}", "}"],
+    "description": "destroyd lifecycle method"
+  }
+}

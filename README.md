@@ -54,6 +54,19 @@
 ##### template code file path
 > This plugin support you to customize your code snippet file as a template, just copy your template absolute path to the config item, it will work.But there is one thing you have to concern, the component name of your template file must be `ComponentName` as a placeholder, only in this way ,the plugin can to replace it with your input name.
 
+#### Support Class Component Lifecircle Snippets
+
+| Shortcut | LifeCircle hook       |
+| -------- | --------------------- |
+| pbm      | private beforeMount   |
+| pm       | private mounted       |
+| pbu      | private beforeUpdate  |
+| pu       | private updated       |
+| pbd      | private beforeDestroy |
+| pd       | private destroyd      |
+
+
+
 ### Package and Publish
 
 [Doc](https://code.visualstudio.com/api/working-with-extensions/publishing-extension)
