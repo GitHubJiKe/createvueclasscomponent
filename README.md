@@ -45,13 +45,14 @@
 > In my opinion, as a component your component name should be same as your .vue filename, in this way you can easily know your component's name and meaning.
 > Big CampleCase is my favorite style for name a file, and many popular and great Open-Sourced UI library such as [ElementUI](https://element.eleme.io/#/en-US),[Ant Design](https://ant.design/), they do this too. So why don't we follow them?
 
-#### Support 
+#### Support
 
 ##### ignore filename to check
 
-> This plugin support you to customize the ignore filename to escape check, default value is `index` 
+> This plugin support you to customize the ignore filename to escape check, default value is `index`
 
 ##### template code file path
+
 > This plugin support you to customize your code snippet file as a template, just copy your template absolute path to the config item, it will work.But there is one thing you have to concern, the component name of your template file must be `ComponentName` as a placeholder, only in this way ,the plugin can to replace it with your input name.
 
 #### Support Class Component Lifecircle Snippets
@@ -63,9 +64,7 @@
 | pbu      | private beforeUpdate  |
 | pu       | private updated       |
 | pbd      | private beforeDestroy |
-| pd       | private destroyd      |
-
-
+| pd       | private destroyed     |
 
 ### Package and Publish
 
