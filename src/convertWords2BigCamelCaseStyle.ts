@@ -1,4 +1,4 @@
-import { getIgnoreFilenames } from "./utils";
+import { getIgnoreFilenames } from './utils';
 
 /**
  * 是否存在大写字符
@@ -6,7 +6,7 @@ import { getIgnoreFilenames } from "./utils";
  * @returns boolean
  */
 function hasUpperCaseChar(str: string) {
-  return /[A-Z]/g.test(str);
+    return /[A-Z]/g.test(str);
 }
 
 /**
@@ -14,10 +14,10 @@ function hasUpperCaseChar(str: string) {
  * @param {*} divider = ' ' 默认空格
  * @returns () => boolean
  */
-function hasDivider(divider = " ") {
-  return function (str: string) {
-    return str.indexOf(divider) > -1;
-  };
+function hasDivider(divider = ' ') {
+    return function (str: string) {
+        return str.indexOf(divider) > -1;
+    };
 }
 
 /**
@@ -25,14 +25,14 @@ function hasDivider(divider = " ") {
  * @param {*} str
  * @param {*} index
  */
-function upperCase(str = "", index = 0) {
-  return str
-    .split("")
-    .reduce((acc, cur, idx) => {
-      const upperChar = index === idx ? cur.toUpperCase() : cur;
-      return `${acc}${upperChar}`;
-    }, "")
-    .trim();
+function upperCase(str = '', index = 0) {
+    return str
+        .split('')
+        .reduce((acc, cur, idx) => {
+            const upperChar = index === idx ? cur.toUpperCase() : cur;
+            return `${acc}${upperChar}`;
+        }, '')
+        .trim();
 }
 
 /**
@@ -41,49 +41,49 @@ function upperCase(str = "", index = 0) {
  * @returns boolean
  */
 function firstCharIsUpper(str: string) {
-  return hasUpperCaseChar(str[0]);
+    return hasUpperCaseChar(str[0]);
 }
 
 const hasDividerSpace = hasDivider();
-const hasDividerHyphen = hasDivider("-");
+const hasDividerHyphen = hasDivider('-');
 
-function convert(str: string, divider = " ") {
-  return str
-    .split(divider)
-    .map((v) => upperCase(v))
-    .join("")
-    .trim();
+function convert(str: string, divider = ' ') {
+    return str
+        .split(divider)
+        .map((v) => upperCase(v))
+        .join('')
+        .trim();
 }
 
 function convertWords2BigCamelCaseStyle(origionalName: string) {
-  const ignoreNames = getIgnoreFilenames(false);
-  if (ignoreNames.includes(origionalName)) {
-    return origionalName;
-  }
-
-  const hasSpace = hasDividerSpace(origionalName);
-  const hasHyphon = hasDividerHyphen(origionalName);
-
-  if (hasUpperCaseChar(origionalName)) {
-    if (firstCharIsUpper(origionalName) && !hasSpace && !hasHyphon) {
-      // DemoComponent || Democomponent
-      return origionalName;
+    const ignoreNames = getIgnoreFilenames(false);
+    if (ignoreNames.includes(origionalName)) {
+        return origionalName;
     }
-  }
 
-  if (hasSpace && hasHyphon) {
-    return convert(convert(origionalName), "-");
-  }
+    const hasSpace = hasDividerSpace(origionalName);
+    const hasHyphon = hasDividerHyphen(origionalName);
 
-  if (hasSpace && !hasHyphon) {
-    return convert(origionalName);
-  }
+    if (hasUpperCaseChar(origionalName)) {
+        if (firstCharIsUpper(origionalName) && !hasSpace && !hasHyphon) {
+            // DemoComponent || Democomponent
+            return origionalName;
+        }
+    }
 
-  if (!hasSpace && hasHyphon) {
-    return convert(origionalName, "-");
-  }
+    if (hasSpace && hasHyphon) {
+        return convert(convert(origionalName), '-');
+    }
 
-  return upperCase(origionalName);
+    if (hasSpace && !hasHyphon) {
+        return convert(origionalName);
+    }
+
+    if (!hasSpace && hasHyphon) {
+        return convert(origionalName, '-');
+    }
+
+    return upperCase(origionalName);
 }
 
 export default convertWords2BigCamelCaseStyle;

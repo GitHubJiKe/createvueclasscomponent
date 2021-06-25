@@ -1,8 +1,7 @@
 {
     "singleQuote": true,
     "tabWidth": 4,
-    "semi": false,
+    "semi": true,
     "jsxBracketSameLine": true,
     "trailingComma": "es5"
-  }
-  
+}
