@@ -3,7 +3,7 @@
     "displayName": "CreateVueClassComponent",
     "description": "create vue class component",
     "icon": "images/vue_logo.png",
-    "version": "0.2.0",
+    "version": "0.2.1",
     "publisher": "pengfeiyuan",
     "engines": {
         "vscode": "^1.57.0"
@@ -19,6 +19,16 @@
         "*"
     ],
     "main": "./out/extension.js",
+    "commands": [
+        {
+            "command": "createvueclasscomponent.create",
+            "title": "Create Vue Class Component"
+        },
+        {
+            "command": "createvueclasscomponent.check",
+            "title": "Check Vue Filename"
+        }
+    ],
     "contributes": {
         "commands": [
             {
@@ -131,5 +141,9 @@
             "eslint --fix",
             "prettier --write"
         ]
+    },
+    "dependencies": {
+        "@types/lodash": "^4.14.170",
+        "lodash": "^4.17.21"
     }
 }

@@ -1,5 +1,5 @@
 import { getIgnoreFilenames } from './utils';
-
+import { upperFirst } from 'lodash';
 /**
  * 是否存在大写字符
  * @param {*} str
@@ -25,14 +25,8 @@ function hasDivider(divider = ' ') {
  * @param {*} str
  * @param {*} index
  */
-function upperCase(str = '', index = 0) {
-    return str
-        .split('')
-        .reduce((acc, cur, idx) => {
-            const upperChar = index === idx ? cur.toUpperCase() : cur;
-            return `${acc}${upperChar}`;
-        }, '')
-        .trim();
+function upperCase(str = '') {
+    return upperFirst(str).trim();
 }
 
 /**
