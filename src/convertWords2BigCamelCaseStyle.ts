@@ -21,11 +21,11 @@ function hasDivider(divider = ' ') {
 }
 
 /**
- * 根据游标将字符串的制定位转为大写
+ * 首字母转为大写
  * @param {*} str
  * @param {*} index
  */
-function upperCase(str = '') {
+function firstCharToUpperCase(str = '') {
     return upperFirst(str).trim();
 }
 
@@ -44,7 +44,7 @@ const hasDividerHyphen = hasDivider('-');
 function convert(str: string, divider = ' ') {
     return str
         .split(divider)
-        .map((v) => upperCase(v))
+        .map((v) => firstCharToUpperCase(v))
         .join('')
         .trim();
 }
@@ -77,7 +77,7 @@ function convertWords2BigCamelCaseStyle(origionalName: string) {
         return convert(origionalName, '-');
     }
 
-    return upperCase(origionalName);
+    return firstCharToUpperCase(origionalName);
 }
 
 export default convertWords2BigCamelCaseStyle;
