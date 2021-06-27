@@ -1,7 +1,7 @@
 import * as vscode from 'vscode';
 import * as fs from 'fs';
-import convertWords2BigCamelCaseStyle from './convertWords2BigCamelCaseStyle';
 import { getIgnoreFilenames } from './utils';
+import * as uppercamelcase from 'uppercamelcase';
 
 interface Data {
     oldPath: string;
@@ -32,10 +32,11 @@ function readFilesOfDest(uri: vscode.Uri) {
             !ignoreFilenames.includes(v) &&
             !/[A-Z]/g.test(v[0])
         ) {
+            const upperCamelCaseName = uppercamelcase(v);
             return {
                 oldPath: `${dir}/${v}`,
-                tempPath: `${dir}/${convertWords2BigCamelCaseStyle(v)}.temp`,
-                newPath: `${dir}/${convertWords2BigCamelCaseStyle(v)}`,
+                tempPath: `${dir}/${upperCamelCaseName}.temp`,
+                newPath: `${dir}/${upperCamelCaseName}`,
             };
         }
 
