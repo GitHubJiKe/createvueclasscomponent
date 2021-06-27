@@ -3,7 +3,7 @@
     "displayName": "CreateVueClassComponent",
     "description": "create vue class component",
     "icon": "images/vue_logo.png",
-    "version": "0.2.1",
+    "version": "0.2.2",
     "publisher": "pengfeiyuan",
     "engines": {
         "vscode": "^1.57.0"
@@ -123,6 +123,7 @@
         "@types/glob": "^7.1.3",
         "@types/mocha": "^8.2.2",
         "@types/node": "14.x",
+        "@types/uppercamelcase": "^3.0.0",
         "@types/vscode": "^1.57.0",
         "@typescript-eslint/eslint-plugin": "^4.26.0",
         "@typescript-eslint/parser": "^4.26.0",
@@ -144,6 +145,7 @@
     },
     "dependencies": {
         "@types/lodash": "^4.14.170",
-        "lodash": "^4.17.21"
+        "lodash": "^4.17.21",
+        "uppercamelcase": "^3.0.0"
     }
 }

@@ -1,7 +1,7 @@
 import * as vscode from 'vscode';
 import * as fs from 'fs';
 import * as path from 'path';
-import convertWords2BigCamelCaseStyle from './convertWords2BigCamelCaseStyle';
+import * as uppercamelcase from 'uppercamelcase';
 
 function getTemplate(componentName: string) {
     const tPath = vscode.workspace
@@ -73,10 +73,7 @@ function createVueClassComponent(context: vscode.ExtensionContext) {
                     prompt: 'What is the name of the new component?',
                 });
 
-                createComponent(
-                    uri,
-                    convertWords2BigCamelCaseStyle(componentName!)
-                );
+                createComponent(uri, uppercamelcase(componentName!));
             }
         )
     );
