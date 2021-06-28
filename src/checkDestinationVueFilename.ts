@@ -17,8 +17,8 @@ function readFilesOfDest(uri: vscode.Uri) {
         const filename = arr.pop();
         if (_path.endsWith('.vue') && !ignoreFilenames.includes(filename!)) {
             const dir = arr.join('/');
-
-            return [handleFile(filename!, dir)];
+            const res = handleFile(filename!, dir);
+            return res ? [res] : [];
         }
 
         return [];
