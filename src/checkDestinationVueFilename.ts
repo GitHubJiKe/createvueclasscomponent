@@ -32,7 +32,7 @@ function readFilesOfDest(uri: vscode.Uri) {
             !ignoreFilenames.includes(v) &&
             !/[A-Z]/g.test(v[0])
         ) {
-            const upperCamelCaseName = uppercamelcase(v);
+            const upperCamelCaseName = uppercamelcase(v.split('.')[0]) + '.vue';
             return {
                 oldPath: `${dir}/${v}`,
                 tempPath: `${dir}/${upperCamelCaseName}.temp`,
